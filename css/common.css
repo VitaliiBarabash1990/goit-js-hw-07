@@ -202,6 +202,12 @@ h1 {
 	height: 40px;
 	background: #4e75ff;
 	border: 1px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 16px; 
+	line-height: 1.5;
+	letter-spacing: 0.04em;
+	color: #fff;
 }
 
 .login-form button:hover {
