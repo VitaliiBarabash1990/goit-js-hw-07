@@ -24,19 +24,21 @@ function handleCreate(event) {
 function createBoxes(amount) {
 	destroyBoxes();
 	let size = 30;
+	const boxes = [];
   for (let i = 0; i < amount; i ++) {
-	size += 10;
-	let color = getRandomHexColor();
-	const markup = `<div style = "width: ${size}px; height: ${size}px; background-color: ${color}"></div>`;
-	console.log(markup);
-	box.insertAdjacentHTML("beforeend", markup);
-}
+		const crtEl = document.createElement("div");
+		crtEl.style.width = `${size}px`;
+		crtEl.style.height = `${size}px`;
+		crtEl.style.backgroundColor = getRandomHexColor();
+		size += 10;
+		boxes.push(crtEl);
+	}
+	box.append(...boxes);
 }
 
 destroyBtn.addEventListener("click", destroyBoxes);
 
 function destroyBoxes() {
 	box.innerHTML = "";
-	console.log(box);
 }
 
